@@ -24,9 +24,9 @@ let password = document.querySelectorAll
 // 9. Select the input using the placeholder attribute selector with value `password` and store in `attrPassword`
 
 // 10. Select all the `li` element and store in `allTopics`
-
+let val = document.querySelectorAll(li);
 // 11. Select all the input element of any type and store in `allInput`
-
+let allInput = document.querySelectorAll("input");
 // 12. Use forEach to console the `innerText` property of all the li element in `allTopics` variable.
 
 // 13. Select all the elements with class `list` and store in variable `listOfSelectedTopics`
