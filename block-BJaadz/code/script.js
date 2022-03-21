@@ -20,29 +20,28 @@ allHrsArray.forEach( element => {
   element.style.border = "1px solid tomato"
 });
 // Change the background of all the hr to "antiquewhite" using for of loop.
-allHrsArrayfor hr of hrs) {
-  hr.style.backgroundColor = "anitiquewhite";
-}
+allHrsArray.forEach(element => element.style.backgroundColor = "antiquewhite");
 // Change the 'border-radius' of all the hr to "5px" using array.
-
+allHrsArray.forEach( element => element.style.borderRadius = "5px");
 // Change the alignment of the heading(h1) to center.
-
+heading.style.textAlign = "center";
 // Change the font size of the heading to 3rem.
-
+heading.style.fontSize = "3rem";
 // Change the border of hr with class 'image' to `2px solid purple`.
+document.querySelectorAll("hr.image").forEach( elm => elm.style.border = "2px solid red");
 
 // Hide the box number 17 (last box).
-
+document.querySelector(".seventeen").style.display = "none";
 // Change the border of all the hr element from solid to dashed type
-
+allHrsArray.forEach( elm => elm.style.borderStyle = "dashed");
 // Create a pragraph element and store it in variable named 'para' using `createElement`
-
+let para = document.createElement('p');
 // Change the inner text of para to "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
-
+para.innerText = "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure.";
 // Remove all the elements from box 1
-
+let box1 = document.querySelector('.one');
 // Replace all the elements inside box 1 with the para (you created above)
-
+box1.append('para');
 /* Walking the DOM
 Do the following after selecting box 16 and storing in variable named box16
 
@@ -60,27 +59,59 @@ Do the following after selecting box 16 and storing in variable named box16
 
   - Focus on the difference between element and node
 */
+let box16 = document.querySelector('.sixteen');
+let parentNode = box16.parentElement;
+let childNodes = box16.childNodes;
+console.log(box16.previousSibling);
+console.log(box16.nextSibling);
+console.log(box16.firstChild);
+console.log(box16.lastChild);
+console.log(box16.previousElementSibling);
+console.log(box16.nextElementSibling);
+console.log(box16.firstElementChild);
+console.log(box16.nextElementSibling);
+
+console.log(box16.lastElementChild);
+
+
+
 
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
-
+let box2 = document.querySelector('.two');
+let para2 = document.createElement('p');
+para2.innerText = "Append inserts as last child" ;
+box2.append(para2); 
 // Select box 3 and prepend a new paragraph element with content "Prepend inserts as first child" just before hr element.
-
+let box3 = document.querySelector('.three');
+let pNew = document.createElement('p');
+pNew.innerText = "Prepend inserts as first child";
+box3.prepend(pNew);
 // Change the border of box 4 to '1px solid black'
-
+let box4 = document.querySelector('.four');
+box4.style.borderStyle = '1px solid black';
 // Change the border radius of box 5 to 10px.
-
+let box5 = document.querySelector('.five');
+box5.style.borderRadius = '10px';
 // Change the text color of box 6 to black.
-
+let box6 = document.querySelector('.six');
+box6.style.color = "black";
 // Change the font size of the para inside box 1 to 0.8rem.
-
+// let box1 = document.querySelector('.one');
+box1.style.fontSize = '0.8rem';
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
+let allBoxes = document.querySelectorAll('.box');
+allBoxes.forEach( ( elm , index)  =>  { 
+  if ( (index + 1) % 2 !== 0){
+      elm.style.backgroundColor = "aliceblue";
+  }
 
+})
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
-
+box6.classList.add("awesome-box");
 // Using the toggle classList property toggle the class `awesome-box` from box 2
-
+box2.classList.toggle("awesome-box");
 // Using the remove classList proeprty remove the class `awesome-box` from box 4
-
+box4.classList.remove("awesome-box");
 // Change the background of the body to bisque
 
 // Create a button and store it in a variable named 'btn'
