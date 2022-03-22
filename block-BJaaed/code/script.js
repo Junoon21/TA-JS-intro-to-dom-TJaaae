@@ -1,5 +1,5 @@
-{
-    let books = [
+let allBooks = {
+     books : [
       {
         isbn: "9781593275846",
         title: "Eloquent JavaScript, Second Edition",
@@ -114,31 +114,38 @@
           "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
         website: "https://shichuan.github.io/javascript-patterns/",
       },
-    ];
+    ]};
  
-  
-let header = document.querySelector('header');
-let main = document.querySelector('main');
-// document.querySelector('ul');
-let ul = document.createElement('ul');
 
-let h1 = document.createElement('h1');
-    h1.innerText = "Bookly";
-books.forEach( book => {
+    // li class="box text-align-center li-margin">  
+    //     <img src="https://eloquentjavascript.net/img/cover.jpg">
+    //     <h2 class="li-margin">Eloquent JavaScript, Second Edition</h2>
+    //     <h3 class="li-margin">Author : <span>Marijn Haverbeke</span></h3>
+    //     <button class="li-margin">buy now</button>
+    //     </li>
+  
+let main = document.querySelector('main');
+main.style.backgroundColor = "yellow";
+let ul = document.querySelector('ul');
+
+allBooks.books.forEach( book => {
     let li = document.createElement('li');
+    // li.classList.add('box text-align-center li-margin');
     let img = document.createElement('img');
     img.src = book.image;
     
     let h2 = document.createElement('h2');
     h2.innerText = book.title;
     let h3 = document.createElement('h3');
-    h3.innerText = book.subtitle;
-    let input = document.createElement("input");
-    input.innerText = "Buy Now";
-    input.style.backgroundColor = "green";
+    let author = document.createTextNode('Author :');
     
-    li.append(img,h2,h3);
-    header.append(h1);
+    let span = document.createElement('span');
+    span.innerText = book.author;
+    let button = document.createElement("button");
+    button.innerText = "Buy Now";
+    h3.append(author,span);
+    li.append(img,h2,h3,button);
     ul.append(li);
+    console.log(li);
 });
-}
+
